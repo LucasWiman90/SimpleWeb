@@ -7,7 +7,8 @@ type Page struct {
 	Body  []byte
 }
 
-// Save writes a text file to root level
+// Save takes a page and saves it as a .txt file on root
+// level of the project
 func (p *Page) Save() error {
 	filename := p.Title + ".txt"
 	return os.WriteFile("./"+filename, p.Body, 0600)
